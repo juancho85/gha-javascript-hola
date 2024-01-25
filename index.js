@@ -1,18 +1,8 @@
 const core = require('@actions/core');
-const github = require('@actions/github');
-
-function tirada() {
-    return Math.floor(Math.random()*6)+1;
-}
-
 try {
-  // Obtemer la información del evento que disparó el flujo de trabajo
-  const payloadEvento = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`Payload evento: ${payloadEvento}`);
-  const numeroDados = core.getInput('numero-dados');
-  core.notice(`Vamos a tirar ${numeroDados} dados.`);
-  core.setOutput("dado1", tirada());
-  core.setOutput("dado2", tirada());
+  const nombre = core.getInput('nombre');
+  core.notice(`Nos has pasado este nombre ${nombre}`);
+  core.setOutput("saludo", `Buenos días, ${nombre}`);
 } catch (error) {
   core.setFailed(error.message);
 }
