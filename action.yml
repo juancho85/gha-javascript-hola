@@ -9,9 +9,7 @@ inputs:
     description: "Tu nombre para el saludo"
 outputs:
   saludo:
-    value: ${{ steps.dado1.outputs.dado1 }}
-  dado2: 
-    value: ${{ steps.dado1.outputs.dado2 }}
+    value: Te saludamos por tu nombre
 runs:
   using: 'node20'
   main: 'dist/index.js'
