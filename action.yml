@@ -9,7 +9,7 @@ inputs:
     description: "Tu nombre para el saludo"
 outputs:
   saludo:
-    value: Te saludamos por tu nombre
+    description: Te saludamos por tu nombre
 runs:
   using: 'node20'
   main: 'dist/index.js'
